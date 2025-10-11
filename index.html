@@ -1,201 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bleedvow • GroveSigilOfficial</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --bg: #000000;
-      --blood: #8b0000;
-      --glow: rgba(139,0,0,0.18);
-      --muted: rgba(255,255,255,0.07);
-      --accent: #b30000;
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #b00000;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      background: var(--bg);
-      color: var(--blood);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:32px;
-      line-height:1.2;
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.2em;
     }
-
-    .card{
-      width:100%;
-      max-width:980px;
-      padding:48px;
-      border-radius:16px;
-      text-align:center;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-      border: 1px solid rgba(139,0,0,0.06);
-      position:relative;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.8em;
     }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      border-radius:18px;
-      background: linear-gradient(120deg, transparent, var(--glow));
-      z-index:0;
-      pointer-events:none;
-      mix-blend-mode:screen;
+    p {
+      max-width: 600px;
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 1.5em;
     }
-
-    header{position:relative;z-index:1}
-    h1{
-      font-family: "Cinzel", serif;
-      font-size: clamp(28px, 6vw, 56px);
-      letter-spacing: 0.02em;
-      margin-bottom:10px;
-      color: var(--blood);
-      text-shadow: 0 6px 24px rgba(139,0,0,0.06), 0 1px 0 rgba(0,0,0,0.8);
-    }
-
-    .role{
-      display:block;
-      font-weight:600;
-      font-size: clamp(14px, 2.6vw, 18px);
-      color: var(--accent);
-      margin-bottom:18px;
-      opacity:0.95;
-    }
-
-    .subtitle{
-      font-family: "Inter", sans-serif;
-      font-size: clamp(12px, 2vw, 16px);
-      letter-spacing:0.04em;
-      margin-bottom:22px;
-      color: var(--blood);
-      opacity:0.9;
-    }
-
-    .subtitle .breath{
-      display:inline-block;
-      padding:6px 12px;
-      border-radius:999px;
-      border:1px solid rgba(139,0,0,0.06);
-      box-shadow: 0 6px 30px rgba(139,0,0,0.03) inset;
-      animation: breathe 4.2s ease-in-out infinite;
-      transform-origin:center;
-    }
-
-    @keyframes breathe {
-      0%,100%{ transform: scale(1); opacity:0.95 }
-      50%{ transform: scale(1.04); opacity:1 }
-    }
-
-    p.bio{
-      max-width:780px;
-      margin: 10px auto 26px;
-      color: #c22a2a;
-      font-size: clamp(13px, 1.8vw, 16px);
-      opacity:0.92;
-      line-height:1.5;
-    }
-
-    .links{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:18px;
-      z-index:1;
-    }
-
-    .link{
-      padding:10px 16px;
-      border-radius:999px;
-      text-decoration:none;
-      color:var(--bg);
-      background: linear-gradient(90deg, rgba(179,0,0,0.95), rgba(139,0,0,0.9));
-      font-weight:600;
-      box-shadow: 0 6px 24px rgba(179,0,0,0.12);
-      transition: transform .12s ease, box-shadow .12s ease;
-      font-size:14px;
-    }
-    .link:focus, .link:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(179,0,0,0.18);
-    }
-
-    .temp-note{
-      margin-top:24px;
-      font-size:12px;
-      color: #661111;
-      opacity:0.8;
-    }
-
-    footer{
-      margin-top:16px;
-      font-size:12px;
-      color: var(--muted);
-      opacity:0.9;
-    }
-
-    @media (max-width:520px){
-      .card{ padding:28px; border-radius:12px }
-      .links{ gap:10px }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.8rem;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <header>
-      <h1>Bleedvow • GroveSigilOfficial</h1>
-      <span class="role">Founder of Dimensiogenesis</span>
-      <div class="subtitle">
-        <span class="breath">Uberman Sleep Schedule { Day 000 }</span>
-      </div>
-    </header>
-
-    <p class="bio">
-      Dimensiogenesis is the study and design of self-contained, interactive digital and conceptual environments. 
-      It combines elements of systems thinking, consciousness research, and digital architecture to explore how 
-      dimensions—both virtual and psychological—can be intentionally structured and experienced.
+  <div>
+    <h1>Bleedvow • GroveSigilOfficial</h1>
+    <h2>Founder of Dimensiogenesis</h2>
+    <p>
+      Dimensiogenesis is the scientific and psychological process of creating and sustaining a personal dimension of consciousness. 
+      It explores how human perception, neurochemistry, and lucid cognition can merge to form independent experiential realities.
+      The practice integrates research across parapsychology, dream studies, and altered-state science—particularly through systems such as 
+      the Uberman Sleep Schedule, lucid dreaming, astral projection, and extended trance-based cognition.
     </p>
-
-    <nav class="links">
-      <a class="link" href="#" id="link-1">Link 1 (placeholder)</a>
-      <a class="link" href="#" id="link-2">Link 2 (placeholder)</a>
-      <a class="link" href="#" id="link-3">Link 3 (placeholder)</a>
-    </nav>
-
-    <div class="temp-note">
-      Temporary Webpage until full App is Developed
-    </div>
-
-    <footer>
-      <div>© 2025 GroveSigilOfficial</div>
-    </footer>
-  </main>
-
-  <script>
-    function updateDay(n){
-      const day = String(n).padStart(3,'0');
-      const breath = document.querySelector('.subtitle .breath');
-      if(breath) breath.textContent = `Uberman Sleep Schedule { Day ${day} }`;
-    }
-
-    (function flicker(){
-      const el = document.querySelector('.card');
-      if(!el) return;
-      let t = 0;
-      setInterval(()=>{
-        t = (t + 1) % 360;
-        el.style.boxShadow = `0 10px 40px rgba(0,0,0,0.85), 0 0 120px rgba(139,0,0,${0.02 + Math.abs(Math.sin(t/60))*0.06})`;
-      }, 1400);
-    })();
-  </script>
+    <h3>Uberman Sleep Schedule { Day 000 }</h3>
+  </div>
+  <footer>
+    Temporary Webpage until full App is Developed
+  </footer>
 </body>
 </html>
