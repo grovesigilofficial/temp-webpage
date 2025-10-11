@@ -56,9 +56,14 @@
       animation: pulse 2.5s infinite ease-in-out;
     }
     a::before {
-      content: "🎥";
       font-size: 1rem;
       opacity: 0.85;
+    }
+    a.youtube::before {
+      content: "🎥";
+    }
+    a.spotify::before {
+      content: "🎵";
     }
     a:hover {
       color: #ff3333;
@@ -93,11 +98,14 @@
     <h3>Uberman Sleep Schedule { Day 000 }</h3>
 
     <div class="links">
-      <a href="https://youtube.com/@nogabrielarmandochristensen?si=Cs0HNwNHgDBmLZ81" target="_blank">
+      <a class="youtube" href="https://youtube.com/@nogabrielarmandochristensen?si=Cs0HNwNHgDBmLZ81" target="_blank">
         Projects, Gaming, Occult Talks, Education Videos (YouTube)
       </a>
-      <a href="https://youtube.com/@bleedvow?si=nhEPORrhzAVe2yIL" target="_blank">
+      <a class="youtube" href="https://youtube.com/@bleedvow?si=nhEPORrhzAVe2yIL" target="_blank">
         Music by Bleedvow (YouTube)
+      </a>
+      <a class="spotify" href="https://open.spotify.com/user/31wy3ejjrgczmv25xwkjlzcqfmby?si=jMr3GLNGS6eWp0vl2vgsOA" target="_blank">
+        Bleedvow on Spotify (Music Streaming)
       </a>
     </div>
   </div>
