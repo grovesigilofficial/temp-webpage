@@ -42,8 +42,11 @@
       display: flex;
       flex-direction: column;
       gap: 0.8em;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 1s;
     }
-    a {
+    a, .cod-username {
       color: #b00000;
       text-decoration: underline;
       font-weight: bold;
@@ -54,8 +57,17 @@
       justify-content: center;
       gap: 0.4em;
       animation: pulse 2.5s infinite ease-in-out;
+      opacity: 0;
     }
-    a::before {
+    a:nth-child(1) { animation-delay: 1.2s; }
+    a:nth-child(2) { animation-delay: 1.6s; }
+    a:nth-child(3) { animation-delay: 2.0s; }
+    a:nth-child(4) { animation-delay: 2.4s; }
+    .cod-username { 
+      animation-delay: 2.8s; 
+      text-decoration: none; 
+    }
+    a::before, .cod-username::before {
       font-size: 1rem;
       opacity: 0.85;
     }
@@ -65,17 +77,22 @@
     a.spotify::before {
       content: "🎵";
     }
+    a.facebook::before {
+      content: "📘";
+    }
+    .cod-username::before {
+      content: "🎮";
+    }
     a:hover {
       color: #ff3333;
       text-shadow: 0 0 10px #ff3333;
     }
     @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.6;
-      }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
     footer {
       position: absolute;
@@ -107,6 +124,12 @@
       <a class="spotify" href="https://open.spotify.com/user/31wy3ejjrgczmv25xwkjlzcqfmby?si=jMr3GLNGS6eWp0vl2vgsOA" target="_blank">
         Bleedvow on Spotify (Music Streaming)
       </a>
+      <a class="facebook" href="https://www.facebook.com/profile.php?id=61582103645891&mibextid=ZbWKwL" target="_blank">
+        Connect on Facebook (Official Page)
+      </a>
+      <div class="cod-username">
+        Call of Duty Mobile: <strong>Bleedvow</strong>
+      </div>
     </div>
   </div>
   <footer>
